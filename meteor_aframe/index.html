@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+  <div id="hudOverlay">
+    <p id="ammo">Munition: 12</p>
+    <p id="hits">Points: 0</p>
+    <p id="misses">Missed: 0</p>
+  </div>
+
+  <a-scene>
+    <a-sky src="sky.jpg"></a-sky>
+
+    <a-box id="lane" position="0 0 -5" width="100" height="0.2" depth="100" visible="false"></a-box>
+
+    <a-sphere id="meteor-template" position="0 5 -15" radius="0.5" color="purple" visible="false"></a-sphere>
+
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-cursor
+        geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01"
+        material="color: black; opacity: 0.7; shader: flat">
+      </a-cursor>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
