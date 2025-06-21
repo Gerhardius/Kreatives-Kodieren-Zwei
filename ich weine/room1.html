@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Raum 1</title>
+  <link rel="stylesheet" href="style/memory.css" />
+</head>
+<body>
+  <div id="info-display" style="margin: 1em 0; font-weight: bold;"></div>
+
+  <h1>Willkommen in Raum 1</h1>
+
+  <p id="status">Spieler 1 ist am Zug</p>
+
+  <div id="players-info">
+    <h2>Spieler im Raum: <span id="player-count">0</span></h2>
+    <ul id="player-scores">
+      <!-- Hier werden die Spielerpunkte angezeigt -->
+    </ul>
+  </div>
+
+  <a href="index.html">Zurück zur Lobby</a>
+  <div id="memory-board"></div>
+  <script src="websocket.js"></script> <!-- Für den WS-Code -->
+  <script src="memory.js"></script>
+  
+</body>
+</html>
