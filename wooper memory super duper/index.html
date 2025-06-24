@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplayer Memory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bgMusic" src="pkmn.mp3" autoplay loop></audio>
+  <div class="controls" style="margin-bottom: 1em;">
+    <label for="volumeSlider">🔊 Lautstärke:</label>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
+  <div id="info-display" style="margin: 1em 0; font-weight: bold;"></div>
+  <h1>Multiplayer Memory</h1>
+  <p id="status">Warte auf Spieler...</p>
+
+  <div id="players-info">
+    <h2>Spieler im Raum: <span id="player-count">0</span></h2>
+    <ul id="player-scores">
+      <!-- Spielerpunkte werden hier angezeigt -->
+    </ul>
+  </div>
+
+  <div id="memory-board"></div>
+
+  <script src="js/websocket.js"></script>
+  <script src="js/game.js"></script>
+  <script>
+    const audio = document.getElementById('bgMusic');
+    const volumeSlider = document.getElementById('volumeSlider');
+    audio.volume = volumeSlider.value;
+
+    volumeSlider.addEventListener('input', function () {
+      audio.volume = this.value;
+    });
+    </script>
+</body>
+</html>
