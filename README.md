@@ -12,3 +12,4 @@ Abgaben von UC und AE
 - mehr als eine Version des Memory
 - Audio muss angepasst werden, damit es nicht auto start ist
 - mehrere Räume für mehr Spieler
+- player scores
