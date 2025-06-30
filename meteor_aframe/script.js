@@ -1,5 +1,5 @@
 let hp = 3;
-let gameOver = false;
+let gameOver = false; 
 let ammo = 12;
 let maxAmmo = 12;
 let reloading = false;
@@ -50,6 +50,22 @@ AFRAME.registerComponent('chasing-meteor', {
   }
 });
 
+
+/*
+if (distance < 1) {
+      this.el.parentNode.removeChild(this.el);
+    if (!gameOver) {
+      hp--;
+      updateHUD();
+    if (hp <= 0) {
+      gameOver = true;
+      alert("Game Over!");
+      setTimeout(() => {
+    location.reload();  // Seite neu laden aka restart game i guess
+  }, 500);
+    }
+  }
+} */
 // spawm met
 function spawnMeteor() {
   const scene = document.querySelector('a-scene');
