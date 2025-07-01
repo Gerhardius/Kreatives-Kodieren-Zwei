@@ -174,7 +174,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 // shoot über phone
-window.addEventListener('klick', () => {
+window.addEventListener('click', () => {
   shootProjectile();
 });
 
