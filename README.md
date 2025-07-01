@@ -13,3 +13,14 @@ Abgaben von UC und AE
 - Audio muss angepasst werden, damit es nicht auto start ist
 - mehrere Räume für mehr Spieler
 - player scores
+
+## Ubiquitous Computing
+
+### Wie es funktioniert
+- Bewegung mit WASD
+- Shoot mit E
+- Vermeide lila Bälle, der Gelbe gibt 1 hp
+- du hast 3 hp und 12 ammo, die nach bestimmter zeit wieder aufladen
+
+### Was noch nicht funktioniert
+- funktionierende Mobile version
