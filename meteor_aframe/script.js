@@ -43,29 +43,13 @@ AFRAME.registerComponent('chasing-meteor', {
       return;
     }
 
-    // Entfernen nach 5 Sekunden, wenn nicht getroffen
+    // Entfernen nach 10 Sekunden, wenn nicht getroffen
     if (Date.now() - this.startTime > 10000) {
       meteor.parentNode.removeChild(meteor);
     }
   }
 });
 
-
-/*
-if (distance < 1) {
-      this.el.parentNode.removeChild(this.el);
-    if (!gameOver) {
-      hp--;
-      updateHUD();
-    if (hp <= 0) {
-      gameOver = true;
-      alert("Game Over!");
-      setTimeout(() => {
-    location.reload();  // Seite neu laden aka restart game i guess
-  }, 500);
-    }
-  }
-} */
 // spawm met
 function spawnMeteor() {
   const scene = document.querySelector('a-scene');
@@ -234,19 +218,8 @@ AFRAME.registerComponent('bee', {
   }
 });
 
-window.addEventListener('load', () => {
-  const cameraRig = document.querySelector('#cameraRig');
-  const isMobile = /iPhone|iPad|Android|Mobile|iPod/i.test(navigator.userAgent);
-
-  if (isMobile) {
-    // Auf Mobile Joystick aktivieren
-    cameraRig.setAttribute('joystick-controls', ''); 
-    window.addEventListener('click', shootProjectile);
-  } else {
-    // Desktop: WASD Steuerung aktivieren
-    cameraRig.setAttribute('wasd-controls', 'acceleration: 40');
-    window.addEventListener('keydown', (e) => {
-      if (e.code === 'KeyE') shootProjectile();
-    });
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'KeyE') {
+    shootProjectile();
   }
 });
