@@ -167,17 +167,6 @@ function shootProjectile() {
   scene.appendChild(projectile);
 }
 
-// shoot über pc
-window.addEventListener('keydown', (e) => {
-  if (e.code === 'KeyE') {
-    shootProjectile();
-  }
-});
-// shoot über phone
-window.addEventListener('click', () => {
-  shootProjectile();
-});
-
 
 //BIENEr BEENER NEENER BEENAR BIENE BIENE BIEBE NIEBEN BIENE BIENE BNEINE BIENE
 AFRAME.registerComponent('bee', {
@@ -249,8 +238,15 @@ window.addEventListener('load', () => {
   const cameraRig = document.querySelector('#cameraRig');
   const isMobile = /iPhone|iPad|Android|Mobile|iPod/i.test(navigator.userAgent);
 
-  if (!isMobile) {
-    // Auf dem Desktop WASD-Steuerung aktivieren
+  if (isMobile) {
+    // Auf Mobile Joystick aktivieren
+    cameraRig.setAttribute('joystick-controls', ''); 
+    window.addEventListener('click', shootProjectile);
+  } else {
+    // Desktop: WASD Steuerung aktivieren
     cameraRig.setAttribute('wasd-controls', 'acceleration: 40');
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'KeyE') shootProjectile();
+    });
   }
 });
